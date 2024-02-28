@@ -19,14 +19,15 @@ public class CustomerController {
         this.service = service;
     }
 
+
     @GetMapping("/")
     public List<Customer> getAll(){
         return service.getAll();
     }
 
-    @GetMapping("/{customerId}")
-    public ResponseEntity<Customer> getById(@PathVariable("customerId") int id){
-        Customer customer = service.getById(id);
+    @GetMapping("/{customerid}")
+    public ResponseEntity<Customer> getById(@PathVariable("customerid") int customerid){
+        Customer customer = service.getById(customerid);
         if(customer == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
@@ -42,9 +43,9 @@ public class CustomerController {
         return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
     }
 
-    @GetMapping("/lastname/{lastName}")
-    public List<Customer> getAllBySurname(@PathVariable("lastName") String lastName){
-        return service.getByLastName(lastName);
+    @GetMapping("/lastname/{lastname}")
+    public List<Customer> getAllBySurname(@PathVariable("lastname") String lastname){
+        return service.getByLastname(lastname);
     }
 
 }

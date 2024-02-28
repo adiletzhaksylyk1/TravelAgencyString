@@ -12,8 +12,8 @@ import lombok.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
-    private String firstName;
-    private String lastName;
+    private int customerid;
+    private String firstname;
+    private String lastname;
     private String email;
 }

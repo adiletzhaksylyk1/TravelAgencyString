@@ -20,8 +20,8 @@ public class CustomerService implements CustomerServiceInterface {
     }
 
     @Override
-    public Customer getById(int customerId) {
-        return repo.findById(customerId).orElse(null);
+    public Customer getById(int customerid) {
+        return repo.findById(customerid).orElse(null);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CustomerService implements CustomerServiceInterface {
     }
 
     @Override
-    public List<Customer> getByLastName(String lastName) {
-        return repo.findByLastName(lastName);
+    public List<Customer> getByLastname(String lastname) {
+        return repo.findByLastname(lastname);
     }
 }
